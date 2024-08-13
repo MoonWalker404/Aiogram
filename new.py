@@ -64,7 +64,8 @@ async def city(message: Message, state: FSMContext):
     conn = sqlite3.connect('user_data.db')
     cur = conn.cursor()
     cur.execute('''
-    INSERT INTO users (name, age, city) VALUES (?, ?, ?)''', (user_data['name'], user_data['age'], user_data['city']))
+    INSERT INTO users (name, age, city) VALUES (?, ?, ?)''',
+                (user_data['name'], user_data['age'], user_data['city']))
     conn.commit()
     conn.close()
 
