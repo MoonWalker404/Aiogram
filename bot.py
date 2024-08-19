@@ -16,6 +16,8 @@ import logging
 import random
 import requests
 
+from aiogram import F
+
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
@@ -67,7 +69,7 @@ async def send_start(message: Message):
     await message.answer("Привет! Я Ваш личный финансовый помощник. Выберите одну из опций в меню:", reply_markup=keyboards)
 
 
-@dp.message(F.text == "Регистрация в телеграм боте")
+@dp.message(F.text == "Регистрация в телеграм-боте")
 async def registration(message: Message):
     telegram_id = message.from_user.id
     name = message.from_user.full_name
